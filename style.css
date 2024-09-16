@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+:root {
+    --escuro: #1C1C2D;
+    --destaque: #FF6F00;
+    --cinza: #8A8A8A;
+}
+
+header {
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    padding-left: 1%;
+    padding-right: 1%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--escuro);
+    color: white;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.searchbar {
+    display: flex;
+    padding: 10px;
+    width: 25%;
+    justify-content: space-between;
+    border-radius: 8px;
+    border: 1px solid white;
+}
+
+.searchbar > input {
+    width: 90%;
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    font-size: 1rem;
+    color: white;
+}
+
+.searchbar > input::placeholder {
+   color: white;
+   font-weight: 500;
+}
+
+
+i {
+    font-size: 1.4rem;
+}
+
+.links {
+    width: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+} 
+
+.links > i {
+    font-size: 2.1rem;
+    padding: 1%;
+}
+
+.profile-pic {
+    width: 40px;
+    border-radius: 100%;
+    border: 2px solid white;
+}
+
+main {
+    width: 100vw;
+    margin-top: 100px;
+
+}
+
+h1 {
+    margin-left: 20px;
+    margin-bottom: 100px;
+}
+
+.produtos {
+    padding: 2%;
+    width: 100vw;
+    background-color: antiquewhite;
+}
+
+.produto {
+    border: 1px solid black;
+    background-color: white;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 8px;
+    gap: 10px;
+    padding-bottom: 1%;
+}
+
+.informacoes-produto {
+    width: 90%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.produto > img {
+    width: 100%;
+    box-shadow: inset 0px -20px 69px 0px rgba(0,0,0,0.75);
+}
+
+.propriedade {
+    border: 1px solid black;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    border-radius: 8px;
+}
