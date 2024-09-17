@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
 }
+
 :root {
     --escuro: #1C1C2D;
     --destaque: #FF6F00;
@@ -13,15 +14,14 @@
 }
 
 header {
-    width: 100vw;
-    height: 70px;
+    width: 100%;
     display: flex;
-    padding-left: 1%;
-    padding-right: 1%;
+    padding: 1% 1%;
     justify-content: space-between;
     align-items: center;
     background-color: var(--escuro);
     color: white;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -32,7 +32,7 @@ header {
 .searchbar {
     display: flex;
     padding: 10px;
-    width: 25%;
+    width: 30%;
     justify-content: space-between;
     border-radius: 8px;
     border: 1px solid white;
@@ -49,22 +49,20 @@ header {
 }
 
 .searchbar > input::placeholder {
-   color: white;
-   font-weight: 500;
+    color: white;
+    font-weight: 500;
 }
-
 
 i {
     font-size: 1.4rem;
 }
 
 .links {
-    width: 7%;
+    width: 10%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
-} 
+}
 
 .links > i {
     font-size: 2.1rem;
@@ -78,26 +76,29 @@ i {
 }
 
 main {
-    width: 100vw;
+    width: 100%;
     margin-top: 100px;
-
 }
 
 h1 {
     margin-left: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 50px; /* Ajustado para se ajustar melhor na tela */
 }
 
 .produtos {
     padding: 2%;
-    width: 100vw;
-    background-color: antiquewhite;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Adicionado para quebra de linha */
+    gap: 10px;
+    justify-content: flex-start; /* Alinhamento centralizado */
 }
 
 .produto {
     border: 1px solid black;
     background-color: white;
-    width: 15%;
+    width: calc(25% - 10px); /* Ajustado para permitir 4 produtos por linha com espaçamento */
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -105,6 +106,7 @@ h1 {
     border-radius: 8px;
     gap: 10px;
     padding-bottom: 1%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra leve para cada produto */
 }
 
 .informacoes-produto {
@@ -112,12 +114,45 @@ h1 {
     padding: 2%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px; /* Ajustado para melhor espaçamento */
 }
 
-.produto > img {
+.informacoes-produto > p {
+    font-size: 2rem;
+}
+
+.img-container {
+    position: relative;
     width: 100%;
-    box-shadow: inset 0px -20px 69px 0px rgba(0,0,0,0.75);
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.img-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 20%);
+    pointer-events: none;
+}
+
+.img-container > img {
+    width: 100%; /* Ajustado para manter a imagem responsiva */
+    height: auto;
+    object-fit: cover; /* Mantém a proporção da imagem */
+}
+
+/* Lidando com as diferentes imagens */
+
+.square-img {
+    width: 10px;
+    height: auto;
 }
 
 .propriedade {
@@ -128,4 +163,48 @@ h1 {
     align-items: center;
     padding: 1%;
     border-radius: 8px;
+    font-size: 0.9rem; /* Ajustado para tamanhos menores */
+}
+
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+    .searchbar {
+        width: 40%;
+    }
+
+    .links {
+        width: 15%;
+    }
+
+    .produto {
+        width: calc(33.333% - 10px); /* Ajuste para 3 produtos por linha em telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .searchbar {
+        width: 50%;
+    }
+
+    .links {
+        width: 20%;
+    }
+
+    .produto {
+        width: calc(50% - 10px); /* Ajuste para 2 produtos por linha em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .searchbar {
+        width: 70%;
+    }
+
+    .links {
+        width: 25%;
+    }
+
+    .produto {
+        width: calc(100% - 10px); /* Ajuste para 1 produto por linha em telas pequenas */
+    }
 }
