@@ -24,7 +24,11 @@ function carregar_produto_por_JSON(produto){
           <div class="propriedade">
             Frete grátis
             <i class="bx bx-package"></i>
-          </div>` : ''}
+          </div>` : `
+          <div class="propriedade">
+            Envio para todo o país
+            <i class='bx bxs-plane-alt'></i>
+          </div>`}
 
           <div class="propriedade">
             ${produto["cores-disponiveis"]} Cores disponíveis
