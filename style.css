@@ -226,6 +226,10 @@ main {
         width: 40%;
     }
 
+    .produtos{
+        padding: 0;
+    }
+
     .links {
         width: 15%;
     }
@@ -242,6 +246,10 @@ main {
 
     .links {
         width: 20%;
+    }
+
+    .produtos {
+        padding: 0;
     }
 
     .produto {
@@ -267,6 +275,10 @@ main {
     .links {
         width: 70%;
         justify-content: space-between;
+    }
+
+    .produtos {
+        padding: 0;
     }
 
     .produto {
