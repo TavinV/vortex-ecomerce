@@ -11,7 +11,7 @@ function criarElementoHtml(html){
 
 function carregar_produto_por_JSON(produto){
     return criarElementoHtml(`
-        <div class="produto">
+       <div class="produto">
           <div class="img-container">
             ${produto.imagem}
           </div>
@@ -20,10 +20,12 @@ function carregar_produto_por_JSON(produto){
             <p>R$ ${produto.valor}</p>
           </span>
 
+          ${produto["frete-gratis"] ? `
           <div class="propriedade">
             Frete grátis
             <i class="bx bx-package"></i>
-          </div>
+          </div>` : ''}
+
           <div class="propriedade">
             ${produto["cores-disponiveis"]} Cores disponíveis
             <i class="bx bxs-adjust-alt"></i>
