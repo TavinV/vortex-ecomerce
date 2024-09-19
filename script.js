@@ -1,4 +1,4 @@
-var endereco_dados = `https://raw.githubusercontent.com/TavinV/vortex-products-api/refs/heads/main/dados.json`
+var endereco_dados = `https://raw.githubusercontent.com/TavinV/vortex-produtos/refs/heads/main/produtos.json`
 
 // Testando os dados da API
 
@@ -13,7 +13,7 @@ function carregar_produto_por_JSON(produto){
     return criarElementoHtml(`
        <div class="produto">
           <div class="img-container">
-            ${produto.imagem}
+          ${produto.imagem}
           </div>
           <span class="informacoes-produto">
             <h2>${produto.nome}</h2>
