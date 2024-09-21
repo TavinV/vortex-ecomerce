@@ -250,6 +250,7 @@ main {
 
     .produto {
         width: calc(33.333% - 10px); /* Ajuste para 3 produtos por linha em telas médias */
+        padding-bottom: 20px;
     }
 }
 
@@ -268,6 +269,7 @@ main {
 
     .produto {
         width: calc(50% - 10px); /* Ajuste para 2 produtos por linha em telas menores */
+        padding-bottom: 20px;
     }
 }
 
@@ -297,5 +299,6 @@ main {
 
     .produto {
         width: calc(100% - 10px); /* Ajuste para 1 produto por linha em telas pequenas */
+        padding-bottom: 20px;
     }
 }

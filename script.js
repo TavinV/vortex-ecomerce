@@ -13,7 +13,7 @@ function carregar_produto_por_JSON(produto){
     return criarElementoHtml(`
        <div class="produto">
           <div class="img-container">
-          ${produto.imagem}
+          <img class="${produto.img_class}"  src="${produto.imagem}"></img>
           </div>
           <span class="informacoes-produto">
             <h2>${produto.nome}</h2>
