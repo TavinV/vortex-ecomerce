@@ -140,10 +140,39 @@ main {
     border-radius: 8px;
     gap: 10px;
     padding-bottom: 1%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra leve para cada produto */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: black;
+    transition: scale .2s ease;
+}
+.produto[href=""]{
+    pointer-events: none;
 }
 
+.produto[href=""] > .img-container::after{
+    content: "Indisponível";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+.produto:hover{
+    scale: 1.02;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.432);
+}
+
+
 .informacoes-produto {
+    position: relative;
     width: 90%;
     padding: 2%;
     display: flex;
@@ -158,8 +187,12 @@ main {
     /* Impede o overflow do conteúdo */
 }
 
-.informacoes-produto > p {
+.valor {
+    position: relative;
+    text-align: left;
+    width: 90%;
     font-size: 2rem;
+    font-family: 'Poppins';
 }
 
 .img-container {
@@ -179,8 +212,8 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 20%);
-    pointer-events: none;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0) 20%);
+
 }
 
 .square-img {
