@@ -15,6 +15,9 @@
 }
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
     width: 100%;
     display: flex;
     padding: 1% 1%;
@@ -33,17 +36,18 @@ header {
 }
 
 .logo > h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     height: 10%;
 }
 .vortex-logo {
-    height:60px;
+    height:40px;
 }
 
 .searchbar {
     display: flex;
-    padding: 15px;
+    align-items: center;
+    padding: 10px;
     width: 30%;
     justify-content: space-between;
     border-radius: 8px;
@@ -59,6 +63,8 @@ header {
     margin-left: 5px;
     font-weight: 500;
     font-size: 1.6rem;  
+    display: flex;
+    align-items: center;
     color: white;
 }
 
@@ -90,6 +96,26 @@ i {
     border: 2px solid white;
 }
 
+.botao-buscar {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.menu {
+    background-color: transparent;
+    border: none;
+    color: white;
+    display: none;
+}
+
+.menu>i {
+    font-size: 2.1rem;
+}
+
 main {
     width: 100%;
     margin-top: 100px;
@@ -110,22 +136,19 @@ main {
 .title-produtos > h2{
     font-family: "Poppins", sans-serif;
     font-size: clamp(1rem, 2vw, 1.5rem);
-    /* Tamanho da fonte responsivo */
     word-wrap: break-word;
-    /* Permite a quebra de linha */
     white-space: normal;
-    /* Permite a quebra de linha automática */
     overflow: visible;
-    /* Deixa o texto visível */
     width: 100%;
 }
 
 .produtos {
     width: 100%;
     display: flex;
-    flex-wrap: wrap; /* Adicionado para quebra de linha */
+    flex-wrap: wrap;
     gap: 10px;
-    justify-content: flex-start; /* Alinhamento centralizado */
+    justify-content: flex-start;
+    padding-bottom: 50px;
 }
 
 .produto {
@@ -143,7 +166,7 @@ main {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     text-decoration: none;
     color: black;
-    transition: scale .2s ease;
+    transition: all .2s ease;
 }
 .produto[href=""]{
     pointer-events: none;
@@ -170,7 +193,7 @@ main {
 
 .produto:hover{
     scale: 1.02;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.432);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.432);
 }
 
 
@@ -181,13 +204,9 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* Ajustado para melhor espaçamento */
     text-align: left;
-    /* Centraliza o texto */
-    flex-grow: 1;
-    /* Faz com que este elemento cresça para ocupar espaço flexível */
+    flex-grow: 1; /* Faz com que este elemento cresça para ocupar espaço flexível */
     overflow: hidden;
-    /* Impede o overflow do conteúdo */
 }
 
 .valor {
@@ -245,7 +264,7 @@ main {
     padding: 2%;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 1.2rem; /* Ajustado para tamanhos menores */
+    font-size: 1.2rem;
     font-family: "Poppins", sans-serif;
 }
 
@@ -291,12 +310,82 @@ main {
 }
 
 @media (max-width: 768px) {
+    
+    header {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .menu {
+        display: block;
+    }
+
     .searchbar {
-        width: 50%;
+        width: auto;
+        border: none;
+        display: flex;
+        gap: 40px
+    }
+
+    .searchbar > input {
+        display: none;
     }
 
     .links {
-        width: 20%;
+        display: none;
+    }
+
+    .links-active {
+        position: absolute;
+        right: 0;
+        top: 55px;
+        background-color: var(--escuro);
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 5%;
+        border-radius: 5px;
+    }
+
+    .links-active > i {
+        font-size: 3rem;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% + 10px);
+    }
+    .links-active > i::after {
+        content: 'Carrinho';
+        font-family: "Raleway", sans-serif;
+        font-size: 2rem;
+    }
+    
+    .links > a {
+        width: calc(100% + 10px);
+        position: relative;
+        font-size: 2rem;
+        text-decoration: none;
+        padding: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .profile-pic {
+        width: 40px;
+    }
+    
+    .links > a::after {
+        text-decoration: none;
+        color: white;
+        font-weight: 3rem;
+        content: 'Perfil';
+        font-family: "Raleway", sans-serif;
+        margin-left: 10px;
     }
 
     .produtos {
@@ -310,20 +399,6 @@ main {
 }
 
 @media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-    }
-
-    header > * {
-        margin: 0;
-    }
-    .searchbar {
-        width: 70%;
-    }
-
     .links {
         width: 70%;
         justify-content: space-between;

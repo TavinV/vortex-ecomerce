@@ -18,12 +18,17 @@
       </div>
       <div class="searchbar">
         <input placeholder="O que você procura?" type="text" />
-        <i class="bx bx-search"></i>
+
+        <button onclick="abrir_search()" class="botao-buscar">
+          <i class="bx bx-search"></i>
+        </button>
+        <button onclick="abrir_menu()" class="menu">
+          <i class="bx bx-menu"></i>
+        </button>
       </div>
-      <div class="links">
-        <a href="">
-          <img class="profile-pic" src="img/foto de perfil.png" alt=""
-        /></a>
+
+      <div id="links" class="links">
+        <a href=""> <img class="profile-pic" src="img/foto de perfil.png" /></a>
         <i class="bx bx-cart"></i>
       </div>
     </header>
@@ -40,4 +45,5 @@
   </body>
 
   <script src="script.js"></script>
+  <script src="carregar_produtos.js"></script>
 </html>
