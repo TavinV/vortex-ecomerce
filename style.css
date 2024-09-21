@@ -164,7 +164,10 @@ main {
     font-weight: 600;
     background: rgba(0, 0, 0, 0.7);
     z-index: 1;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
+
 .produto:hover{
     scale: 1.02;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.432);
