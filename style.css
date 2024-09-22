@@ -6,6 +6,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
+    text-decoration: none;
 }
 
 :root {
@@ -14,18 +15,23 @@
     --cinza: #8A8A8A;
 }
 
+.inactive {
+    display: none;
+}
 header {
     position: sticky;
     top: 0;
     z-index: 999;
     width: 100%;
     display: flex;
-    padding: 1% 1%;
+    padding-left: 1%;
+    padding-right: 1%;
     justify-content: space-between;
     align-items: center;
     background-color: var(--escuro);
     color: white;
     flex-wrap: wrap;
+    height: 10vh;
 }
 
 .logo{
@@ -36,21 +42,23 @@ header {
 }
 
 .logo > h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     height: 10%;
 }
 .vortex-logo {
-    height:40px;
+    height:35px;
 }
 
 .searchbar {
     display: flex;
     align-items: center;
-    padding: 10px;
+    height: 80%;
     width: 30%;
-    justify-content: space-between;
-    border-radius: 8px;
+    justify-content: space-evenly;
+    padding-right: 1%;
+    padding-left: 1%;
+    border-radius: 40px;
     border: 1px solid white;
 }
 
@@ -60,9 +68,8 @@ header {
     background: transparent;
     border: none;
     outline: none;
-    margin-left: 5px;
     font-weight: 500;
-    font-size: 1.6rem;  
+    font-size: 1.2rem;  
     display: flex;
     align-items: center;
     color: white;
@@ -71,7 +78,7 @@ header {
 .searchbar > input::placeholder {
     color: white;
     font-weight: 500;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 
 i {
@@ -85,9 +92,11 @@ i {
     justify-content: space-around;
 }
 
-.links > i {
-    font-size: 2.1rem;
-    padding: 1%;
+.links > a {
+    color: white;
+}
+.carrinho > i {
+    font-size: 3rem;
 }
 
 .profile-pic {
@@ -312,8 +321,9 @@ main {
 @media (max-width: 768px) {
     
     header {
-        padding-left: 5%;
-        padding-right: 5%;
+        display: flex;
+        justify-content: space-between;
+        height: 7vh;
     }
 
     .menu {
@@ -322,49 +332,117 @@ main {
 
     .searchbar {
         width: auto;
-        border: none;
         display: flex;
-        gap: 40px
+        gap: 20px;
+        border:none
     }
 
     .searchbar > input {
         display: none;
     }
 
-    .links {
-        display: none;
+    .mobile-search-bar {
+        position: relative;
+        top: 0px;
+        width: 100vw;
+        height: 7vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background-color: var(--escuro);
+        transform: translateY(-100px);
+        transition: all .6s ease;
     }
 
-    .links-active {
+    .mobile-search-bar.active {
+        transform: translateY(0);
+    }
+
+    .mobile-search-bar > input {
+        background-color: white;
+        width: 60%;
+        height: 5vh;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: black;
+        border-radius: 8px;
+        padding-left: 4%;
+        font-family: "Raleway";
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+
+    .mobile-search-bar>input:active {
+        border: none;
+    }
+
+    .botao-buscar {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    .botao-buscar > i {
+        font-size: 2.5rem;
+    }
+
+    .mobile-search-bar > input::placeholder {
+        color: black;
+        text-align: left;
+        font-family: "Raleway";
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+
+  
+    .links {
         position: absolute;
         right: 0;
-        top: 55px;
+        top: 7vh;
         background-color: var(--escuro);
-        width: 30%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         gap: 20px;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 5%;
-        border-radius: 5px;
+        padding: 8%;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+        transform: translateX(900px);
+        transition: all .6s ease;
+
+    }
+    .links.active {
+        transform: translatex(0);
     }
 
-    .links-active > i {
-        font-size: 3rem;
-        position: relative;
+    .carrinho {
         display: flex;
+        padding: 5%;
         justify-content: space-between;
         align-items: center;
         width: calc(100% + 10px);
+        position: relative;
     }
-    .links-active > i::after {
+
+    .carrinho > i{
+        font-size: 4rem;
+    }
+    .carrinho::after {
         content: 'Carrinho';
+        font-weight: 600;
         font-family: "Raleway", sans-serif;
         font-size: 2rem;
     }
     
-    .links > a {
+    .perfil {
         width: calc(100% + 10px);
         position: relative;
         font-size: 2rem;
@@ -376,16 +454,16 @@ main {
     }
 
     .profile-pic {
-        width: 40px;
+        width: 60px;
     }
     
-    .links > a::after {
+    .perfil::after {
         text-decoration: none;
+        font-weight: 600;
         color: white;
         font-weight: 3rem;
         content: 'Perfil';
         font-family: "Raleway", sans-serif;
-        margin-left: 10px;
     }
 
     .produtos {
@@ -399,9 +477,9 @@ main {
 }
 
 @media (max-width: 480px) {
-    .links {
-        width: 70%;
-        justify-content: space-between;
+
+    .links-active {
+        width: 65%;
     }
 
     .produtos {
