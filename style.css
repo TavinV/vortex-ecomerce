@@ -15,7 +15,7 @@
     --cinza: #8A8A8A;
 }
 
-.inactive {
+.mobile-search-bar {
     display: none;
 }
 header {
@@ -42,7 +42,7 @@ header {
 }
 
 .logo > h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.25rem, 1.0542rem + 1.3619vw, 3.4375rem);
     font-weight: bold;
     height: 10%;
 }
@@ -405,13 +405,13 @@ main {
         right: 0;
         top: 7vh;
         background-color: var(--escuro);
-        width: 50%;
+        width: 250px;
         display: flex;
         flex-direction: column;
         gap: 20px;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 8%;
+        padding: 1%;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
 
@@ -425,43 +425,40 @@ main {
 
     .carrinho {
         display: flex;
-        padding: 5%;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
-        width: calc(100% + 10px);
+        width: 240px;
         position: relative;
     }
 
     .carrinho > i{
-        font-size: 4rem;
+        font-size: 300%;
     }
     .carrinho::after {
         content: 'Carrinho';
         font-weight: 600;
         font-family: "Raleway", sans-serif;
-        font-size: 2rem;
+        font-size: clamp(1.5rem, 0.6667rem + 2.7778vw, 2rem);
     }
     
     .perfil {
-        width: calc(100% + 10px);
+        width: 240px;
         position: relative;
-        font-size: 2rem;
         text-decoration: none;
-        padding: 5%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
     }
 
     .profile-pic {
-        width: 60px;
+        width: 20%;
     }
     
     .perfil::after {
         text-decoration: none;
         font-weight: 600;
         color: white;
-        font-weight: 3rem;
+        font-size: clamp(1.5rem, 0.6667rem + 2.7778vw, 2rem);
         content: 'Perfil';
         font-family: "Raleway", sans-serif;
     }
@@ -490,4 +487,41 @@ main {
         width: calc(100% - 10px); /* Ajuste para 1 produto por linha em telas pequenas */
         padding-bottom: 20px;
     }
+}
+
+@media (max-width: 220px) {
+    header{
+        flex-wrap: wrap;
+        height: 15vh;
+        justify-content: space-around
+    }
+
+    .searchbar {
+        width: 100%;
+        padding: 0;
+    }
+    .searchbar > button > i{
+        font-size: 1.5rem;
+    }
+
+    .links{
+        position: absolute;
+        right: 0;
+        top: 15vh;
+        width: 100%;
+    }
+
+    .carrinho {
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    .perfil{
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    .profile-pic{
+        width: 15%;
+    }
+
 }
